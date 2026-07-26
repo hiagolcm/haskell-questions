@@ -1,74 +1,60 @@
-# Haskell Exercises — "Starting Out" (Learn You a Haskell)
+# Haskell Exercises — Learn You a Haskell
 
-Based on: https://learnyouahaskell.github.io/starting-out.html
+Coding exercises that follow the book chapter by chapter. Exercises are
+grouped into **chapters**, and within each chapter split into:
 
-Ten exercises, each mixing several concepts from the chapter (arithmetic,
-booleans, if-then-else, lists, ranges, list comprehensions, tuples, zip...)
-rather than drilling one concept at a time. Difficulty ramps up from
-01 to the 10-capstone.
+* **Regular** — `Solution.hs` gives you functions with their type
+  signatures; replace each `undefined` with a real implementation.
+* **Challenges** — a single result function described in prose, shipped with
+  an **empty** `Solution.hs`. You write everything, inventing your own
+  helper functions; only the one result function is checked.
 
-No recursion, `map`/`filter`, or imports beyond what the chapter covers are
-needed (or expected) to solve any of these — everything is doable with
-plain Prelude functions, ranges, and list comprehensions.
+## Guiding principle: mix, don't isolate
+
+Exercises are **progressive and integrative**. Nothing is practised in a
+vacuum: each exercise reuses the concepts from every exercise before it and
+layers a new idea on top. Chapter 2 assumes everything from chapter 1 (lists,
+comprehensions, ranges, tuples, `zip`, booleans, `if/then/else`, string
+building) and keeps using it while introducing types and typeclasses.
 
 ## Layout
 
 ```
 haskell-questions/
-  TestHarness.hs        # shared test-checking helpers, don't need to touch this
-  run-tests.sh           # the only command you need to run tests
-  01-temperature-logic/
-    description.md       # the problem statement — read this first
-    Solution.hs           # <-- edit this file, replace `undefined` with your answer
-    tests/Spec.hs         # test cases, read-only, run by run-tests.sh
-  02-list-toolbox/
+  TestHarness.hs         # shared test helpers (don't touch)
+  run-tests.sh           # the only command you need
+  01-starting-out/       # chapter 1
+    01-temperature-logic/
+      description.md
+      Solution.hs
+      tests/Spec.hs
     ...
-  ...
+  02-types-and-typeclasses/   # chapter 2
+    01-showing-lists/
+    ...
 ```
 
-## Workflow
+## Running tests
 
-1. Open an exercise's `description.md`.
-2. Edit that exercise's `Solution.hs`, replacing every `undefined` with a
-   real implementation matching the given type signature.
-3. Run the tests:
-
-   ```bash
-   ./run-tests.sh 01        # runs just 01-temperature-logic
-   ./run-tests.sh all       # runs every exercise
-   ```
-
-   (You can pass any unambiguous prefix, e.g. `./run-tests.sh 04`.)
-
-Output looks like:
-
-```
-########## 01-temperature-logic ##########
-== Temperature Logic ==
-  [PASS] celsiusToFahrenheit 0
-  [FAIL] classifyTemp -5 -- expected "freezing", got "<exception while showing value>"
-1/2 passed
+```bash
+./run-tests.sh               # every exercise in every chapter
+./run-tests.sh 02            # every exercise in chapter 02
+./run-tests.sh 02 03         # chapter 02, exercise 03
 ```
 
-A non-zero exit code means at least one check failed.
+Requires `runghc` (ships with GHC) on your `PATH`.
 
-## Requirements
+## Chapters
 
-Requires `runghc` (ships with GHC) on your `PATH`. If `./run-tests.sh`
-says `command not found: runghc`, install GHC first (e.g.
-`brew install ghc` on macOS, or via [ghcup](https://www.haskell.org/ghcup/)).
+### 01 — starting-out
+Based on https://learnyouahaskell.github.io/starting-out.html — arithmetic,
+booleans, `if/then/else`, lists, ranges, list comprehensions, tuples, `zip`.
+Regular: 01–10. Challenges: 11–13.
 
-## Exercises
-
-| # | Name | Concepts mixed in |
-|---|------|--------------------|
-| 01 | temperature-logic | arithmetic, negative-number parens, booleans (`&&`/`\|\|`/`not`), `if/then/else`, infix backtick functions |
-| 02 | list-toolbox | list literals, `:`, `++`, `!!`, `head`/`tail`/`last`/`init`/`length`/`null`/`reverse`, list comparison, tuples |
-| 03 | range-rider | ranges `[a..b]`, stepped ranges, `cycle`/`repeat`/`replicate`, `take`, comprehensions |
-| 04 | comprehension-craft | multi-generator & multi-predicate comprehensions, nested comprehensions, `_`, `elem` |
-| 05 | tuple-tactics | tuples, `fst`/`snd`, `zip`, comprehensions |
-| 06 | boolean-gate | boolean algebra, equality/inequality, `elem`, ranges |
-| 07 | string-wrangler | strings as `[Char]`, `reverse`, `take`/`drop`, `!!`, comprehension filters |
-| 08 | infinite-ideas | infinite ranges, `cycle`/`repeat`, `zip` with infinite lists, laziness |
-| 09 | number-cruncher | `sum`/`product`/`maximum`/`minimum`, `fromIntegral`, tuples, comprehensions |
-| 10 | report-card | capstone: tuples + `zip` + comprehensions + booleans + `if/then/else` + string concat |
+### 02 — types-and-typeclasses
+Based on https://learnyouahaskell.github.io/types-and-typeclasses.html —
+explicit type signatures, polymorphism, and the typeclasses `Eq`, `Ord`
+(`compare`/`Ordering`), `Show`, `Read` (+type annotations), `Enum`,
+`Bounded`, and the numeric classes (`fromIntegral`, `pi`, `sqrt`). Every
+exercise keeps using the chapter-1 toolkit. Regular: 01–10. Challenges:
+11–13.
