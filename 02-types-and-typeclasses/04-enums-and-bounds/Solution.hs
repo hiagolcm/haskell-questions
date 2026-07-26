@@ -11,16 +11,16 @@ module Solution
 -- See description.md for the spec of each function.
 
 shiftEach :: String -> String
-shiftEach s = undefined
+shiftEach s = [ succ c | c <- s]
 
 bookmark :: [String] -> [(Char, String)]
-bookmark ws = undefined
+bookmark ws = [(a,b) | (a,b)<- zip ['a'..]  ws]
 
 everyOrdering :: [Ordering]
-everyOrdering = undefined
+everyOrdering = [LT ..]
 
 boolPair :: (Bool, Bool)
-boolPair = undefined
+boolPair = (minBound, maxBound)
 
 neighbours :: Char -> (Char, Char)
-neighbours c = undefined
+neighbours c = (pred c, succ c)

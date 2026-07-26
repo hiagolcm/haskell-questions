@@ -10,13 +10,13 @@ module Solution
 -- See description.md for the spec of each function.
 
 normalizeInts :: [String] -> [String]
-normalizeInts xs = undefined
+normalizeInts xs = [show (read x :: Int) | x <- xs]
 
 keepBig :: Int -> [String] -> [Int]
-keepBig t xs = undefined
+keepBig t xs = [read x :: Int | x <- xs, (read x :: Int) > t]
 
 sumOfReadable :: [String] -> String
-sumOfReadable xs = undefined
+sumOfReadable xs = "total: " ++ show (sum [read x :: Int | x <- xs])
 
 compareStrings :: String -> String -> Ordering
-compareStrings a b = undefined
+compareStrings a b = compare (read a :: Int) (read b :: Int)

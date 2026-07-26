@@ -10,13 +10,13 @@ module Solution
 -- See description.md for the spec of each function.
 
 tagValues :: Show a => [a] -> [String]
-tagValues xs = undefined
+tagValues xs = ["<" ++ show x ++ ">" | x <- xs]
 
 passFail :: Int -> [Int] -> [String]
-passFail t xs = undefined
+passFail t xs = [if x >= t then "pass" else "fail" | x <- xs]
 
 withVerdict :: Int -> [(String, Int)] -> [String]
-withVerdict t ps = undefined
+withVerdict t ps = [ name ++ ": " ++ (if score >= t then "pass" else "fail") | (name, score) <- ps]
 
 summaryLine :: [Int] -> String
-summaryLine xs = undefined
+summaryLine xs = "count " ++ show (length xs) ++ ", max " ++ show (maximum xs) ++ ", min " ++ show (minimum xs)

@@ -10,13 +10,18 @@ module Solution
 -- See description.md for the spec of each function.
 
 vsThreshold :: Int -> [Int] -> [Ordering]
-vsThreshold t xs = undefined
+vsThreshold t xs = [compare x t | x <- xs]
 
 countBelow :: Int -> [Int] -> Int
-countBelow t xs = undefined
+countBelow t xs = sum [1 | x <- xs, compare x t == LT]
 
 cmpSymbol :: Int -> Int -> String
-cmpSymbol a b = undefined
+cmpSymbol a b = 
+  show a ++
+  (if compare a b == LT then " < "
+  else if compare a b == GT then " > "
+  else " = ")
+  ++ show b
 
 extremesCompare :: [Int] -> Ordering
-extremesCompare xs = undefined
+extremesCompare xs = compare (head xs) (last xs)

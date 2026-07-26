@@ -10,13 +10,17 @@ module Solution
 -- See description.md for the spec of each function.
 
 positions :: Eq a => a -> [a] -> [Int]
-positions v xs = undefined
+positions v xs = [idx | (idx, x) <- zip [0..] xs, x == v]
 
 sortPair :: Ord a => a -> a -> (a, a)
-sortPair a b = undefined
+sortPair a b = if compare a b == LT then (a, b) else (b, a)
 
 clampList :: Ord a => a -> a -> [a] -> [a]
-clampList lo hi xs = undefined
+clampList lo hi xs = [
+  if x < lo then lo
+  else if x > hi then hi
+  else x 
+  | x <-xs ]
 
 pairWithEq :: Eq a => a -> [a] -> [(a, Bool)]
-pairWithEq v xs = undefined
+pairWithEq v xs = [(x, v == x) | x <- xs]

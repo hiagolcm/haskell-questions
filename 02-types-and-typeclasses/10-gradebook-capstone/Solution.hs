@@ -11,16 +11,16 @@ module Solution
 -- See description.md for the spec of each function.
 
 parseScores :: [String] -> [Int]
-parseScores xs = undefined
+parseScores xs = [read x | x <- xs]
 
 attachLabels :: [Int] -> [(Char, Int)]
-attachLabels xs = undefined
+attachLabels xs = zip ['A'..] xs
 
 rankVsAverage :: [Int] -> [Ordering]
-rankVsAverage xs = undefined
+rankVsAverage xs = [compare x (sum xs `div` length xs) | x <- xs]
 
 report :: [String] -> [String]
-report xs = undefined
+report xs = [label : ": " ++ score | (label, score) <- zip ['A'..] xs]
 
 highest :: [String] -> Int
-highest xs = undefined
+highest xs = maximum [read x | x <- xs]

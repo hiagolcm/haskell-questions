@@ -11,16 +11,16 @@ module Solution
 -- See description.md for the spec of each function.
 
 toDoubles :: [Int] -> [Double]
-toDoubles xs = undefined
+toDoubles xs = [fromIntegral x | x <- xs]
 
 meanOf :: [Int] -> Double
-meanOf xs = undefined
+meanOf xs = fromIntegral (sum xs) / fromIntegral (length xs)
 
 averages :: [[Int]] -> [Double]
-averages gs = undefined
+averages gs = [meanOf g | g <- gs]
 
 distances :: [(Double, Double)] -> [Double]
-distances ps = undefined
+distances ps = [sqrt (x*x + y*y) | (x,y) <- ps]
 
 circleAreas :: [Double] -> [Double]
-circleAreas rs = undefined
+circleAreas rs = [pi * r*r | r <- rs]
