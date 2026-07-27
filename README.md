@@ -35,6 +35,9 @@ haskell-questions/
   03-mixed-challenges/        # cross-chapter challenges (ch1 + ch2)
     01-class-report/
     ...
+  04-syntax-in-functions/     # chapter 4
+    01-pattern-basics/
+    ...
 ```
 
 ## Running tests
@@ -72,3 +75,10 @@ Cross-chapter challenges that combine chapter 1 and chapter 2. Two kinds:
 
 All four are single-result functions with empty templates, like the other
 challenges.
+
+### 04 — syntax-in-functions
+Based on https://learnyouahaskell.github.io/syntax-in-functions.html —
+pattern matching, tuple/list patterns, as-patterns, recursion, guards,
+`where`, `let ... in`, and `case`. Each exercise keeps using the earlier
+chapters' toolkit. Regular: 01–10. Challenges: 11–14 (11–12 integrative,
+13–14 edge-case).
