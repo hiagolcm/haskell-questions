@@ -32,6 +32,9 @@ haskell-questions/
   02-types-and-typeclasses/   # chapter 2
     01-showing-lists/
     ...
+  03-mixed-challenges/        # cross-chapter challenges (ch1 + ch2)
+    01-class-report/
+    ...
 ```
 
 ## Running tests
@@ -58,3 +61,14 @@ explicit type signatures, polymorphism, and the typeclasses `Eq`, `Ord`
 `Bounded`, and the numeric classes (`fromIntegral`, `pi`, `sqrt`). Every
 exercise keeps using the chapter-1 toolkit. Regular: 01–10. Challenges:
 11–13.
+
+### 03 — mixed-challenges
+Cross-chapter challenges that combine chapter 1 and chapter 2. Two kinds:
+
+* **Integrative** (`01-class-report`, `02-closest-point`) — combine several
+  separately-taught pieces into one multi-step solution.
+* **Edge-case** (`03-digit-sum`, `04-sorted-check`) — familiar tools applied
+  in unfamiliar ways, on inputs that defeat the obvious approach.
+
+All four are single-result functions with empty templates, like the other
+challenges.

@@ -53,7 +53,7 @@ if [[ $# -eq 1 ]]; then
 fi
 
 # one exercise within the chapter
-exercise=$(find "$chapter" -maxdepth 1 -type d -name "${2}*" | sed 's|^\./||' | head -1)
+exercise=$(find "$chapter" -mindepth 1 -maxdepth 1 -type d -name "${2}*" | sed 's|^\./||' | head -1)
 if [[ -z "$exercise" ]]; then
   echo "No exercise matching '$2' in $chapter. Available:"
   for ex in "$chapter"/[0-9][0-9]-*/; do echo "  - ${ex%/}"; done
