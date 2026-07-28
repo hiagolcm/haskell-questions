@@ -10,13 +10,25 @@ module Solution
 -- See description.md for the spec of each function.
 
 countPositives :: [Int] -> Int
-countPositives xs = undefined
+countPositives [] = 0
+countPositives (x:xs) 
+  | x > 0 = 1 + countPositives xs
+  | otherwise = countPositives xs
 
 compress :: Eq a => [a] -> [a]
-compress xs = undefined
+compress [] = []
+compress [x] = [x]
+compress (x:y:xs) 
+  | x == y =  compress (y:xs)
+  | otherwise = x:compress (y:xs)
 
 gradeSummary :: [Int] -> String
-gradeSummary xs = undefined
+gradeSummary xs =
+  "average " ++ show average ++ ": " ++ verdict
+  where 
+    average = fromIntegral (sum xs) / fromIntegral (length xs)
+    verdict = if average >= 60 then "pass" else "fail"
 
 report :: [Int] -> String
-report xs = undefined
+report [] = "empty class"
+report xs = gradeSummary xs

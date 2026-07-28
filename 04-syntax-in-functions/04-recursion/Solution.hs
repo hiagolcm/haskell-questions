@@ -10,16 +10,21 @@ module Solution
 -- See description.md for the spec of each function.
 
 sumList :: [Int] -> Int
-sumList xs = undefined
+sumList [] = 0
+sumList (x:xs) = x + sumList xs
 
 lengthList :: [a] -> Int
-lengthList xs = undefined
+lengthList [] = 0
+lengthList (x:xs) = 1 + lengthList xs
 
 productList :: [Int] -> Int
-productList xs = undefined
+productList [] = 1
+productList (x:xs) = x * productList xs
 
 allTrue :: [Bool] -> Bool
-allTrue xs = undefined
+allTrue [] = True
+allTrue (x:xs) = x && allTrue xs
 
 countDown :: Int -> [Int]
-countDown n = undefined
+countDown 0 = [0]
+countDown n = [n] ++ countDown (n-1)

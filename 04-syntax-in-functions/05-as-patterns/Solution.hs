@@ -9,13 +9,18 @@ module Solution
 -- See description.md for the spec of each function.
 
 repeatFirst :: [a] -> [a]
-repeatFirst xs = undefined
+repeatFirst [] = []
+repeatFirst all@(x:_) = x:all
 
 describeString :: String -> String
-describeString s = undefined
+describeString "" = "empty"
+describeString all@(c:_) = all ++ " starts with " ++ [c]
 
 firstTwoEqual :: Eq a => [a] -> Bool
-firstTwoEqual xs = undefined
+firstTwoEqual [] = False
+firstTwoEqual [x] = False
+firstTwoEqual (x:y:_) = x == y
 
 dupEach :: [a] -> [a]
-dupEach xs = undefined
+dupEach [] = []
+dupEach (x:xs) = [x, x] ++ dupEach xs

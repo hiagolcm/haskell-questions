@@ -10,13 +10,20 @@ module Solution
 -- See description.md for the spec of each function.
 
 isZero :: Int -> Bool
-isZero n = undefined
+isZero 0 = True
+isZero x = False
 
 notB :: Bool -> Bool
-notB b = undefined
+notB False = True
+notB True = False
 
 smallName :: Int -> String
-smallName n = undefined
+smallName 0 = "zero"
+smallName 1 = "one"
+smallName 2 = "two"
+smallName 3 = "three"
+smallName x =  "many"
 
 boolToInt :: Bool -> Int
-boolToInt b = undefined
+boolToInt False = 0
+boolToInt True = 1 

@@ -10,13 +10,16 @@ module Solution
 -- See description.md for the spec of each function.
 
 describeList :: [a] -> String
-describeList xs = undefined
+describeList xs = case xs of [] -> "empty"
+                             [x] -> "one"
+                             otherwise -> "many"
 
 headOr :: a -> [a] -> a
-headOr def xs = undefined
+headOr def xs = case xs of [] -> def
+                           otherwise -> head xs
 
 orderingWord :: Ordering -> String
-orderingWord o = undefined
+orderingWord o = case o of LT -> "less"; EQ -> "equal"; otherwise -> "greater"
 
 signCase :: Int -> String
-signCase n = undefined
+signCase n = case compare n 0 of GT -> "positive"; EQ -> "zero"; LT -> "negative"

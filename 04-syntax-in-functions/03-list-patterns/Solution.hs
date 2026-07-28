@@ -9,13 +9,20 @@ module Solution
 -- See description.md for the spec of each function.
 
 firstOrZero :: [Int] -> Int
-firstOrZero xs = undefined
+firstOrZero [] = 0
+firstOrZero (x:_) = x
 
 tailOrEmpty :: [a] -> [a]
-tailOrEmpty xs = undefined
+tailOrEmpty [] = []
+tailOrEmpty (_:xs) = xs
 
 sumFirstTwo :: [Int] -> Int
-sumFirstTwo xs = undefined
+sumFirstTwo [] = 0
+sumFirstTwo [x] = 0
+sumFirstTwo (x:y:_) = x + y 
 
 describeLen :: [a] -> String
-describeLen xs = undefined
+describeLen [] = "empty"
+describeLen [x] = "one"
+describeLen (x:y:[]) = "two"
+describeLen xs = "many"

@@ -11,16 +11,16 @@ module Solution
 -- See description.md for the spec of each function.
 
 addVectors :: (Int, Int) -> (Int, Int) -> (Int, Int)
-addVectors a b = undefined
+addVectors (x, y) (a, b) = (x+a, y+b)
 
 first3 :: (a, b, c) -> a
-first3 t = undefined
+first3 (a, _, _) = a
 
 third3 :: (a, b, c) -> c
-third3 t = undefined
+third3 (_, _, c) = c
 
 swapEnds :: (a, b, c) -> (c, b, a)
-swapEnds t = undefined
+swapEnds (a, b, c) = (c, b, a)
 
 labelValue :: (String, Int) -> String
-labelValue p = undefined
+labelValue (name, value) = name ++ "=" ++ show(value)
