@@ -38,6 +38,9 @@ haskell-questions/
   04-syntax-in-functions/     # chapter 4
     01-pattern-basics/
     ...
+  05-higher-order-functions/  # chapter 5
+    01-currying-and-sections/
+    ...
 ```
 
 ## Running tests
@@ -82,3 +85,14 @@ pattern matching, tuple/list patterns, as-patterns, recursion, guards,
 `where`, `let ... in`, and `case`. Each exercise keeps using the earlier
 chapters' toolkit. Regular: 01–10. Challenges: 11–14 (11–12 integrative,
 13–14 edge-case).
+
+### 05 — higher-order-functions
+Based on https://learnyouahaskell.github.io/higher-order-functions.html —
+currying and partial application, sections, `map`/`filter`, lambdas,
+functions as parameters/return values, `foldl`/`foldr` (+`foldl1`/`foldr1`),
+`scanl`/`scanl1`, the `$` operator, and composition (`.`)/point-free style.
+Each exercise keeps using the earlier chapters' toolkit. Regular: 01–10.
+Challenges: 11–14 — integrative (`11-poly-value`, `12-weighted-average`)
+combine several formulas into one multi-step calculation; edge-case
+(`13-compose-all`, `14-op-dispatch`) apply this chapter's own tools
+(composition, filter) to functions themselves rather than plain data.
