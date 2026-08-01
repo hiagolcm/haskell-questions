@@ -41,6 +41,9 @@ haskell-questions/
   05-higher-order-functions/  # chapter 5
     01-currying-and-sections/
     ...
+  06-making-our-own-types-and-typeclasses/  # chapter 6
+    01-basic-shapes/
+    ...
 ```
 
 ## Running tests
@@ -96,3 +99,21 @@ Challenges: 11–14 — integrative (`11-poly-value`, `12-weighted-average`)
 combine several formulas into one multi-step calculation; edge-case
 (`13-compose-all`, `14-op-dispatch`) apply this chapter's own tools
 (composition, filter) to functions themselves rather than plain data.
+
+### 06 — making-our-own-types-and-typeclasses
+Based on https://learnyouahaskell.github.io/making-our-own-types-and-typeclasses.html
+— `data` declarations and value constructors, nested data types, record
+syntax, type parameters, deriving (`Eq`/`Ord`/`Show`/`Read`/`Bounded`/`Enum`),
+type synonyms, recursive data types (a custom list, a binary search tree),
+and defining your own typeclasses with `class`/`instance`. **This chapter
+works differently from the others**: since a `data`/`class` declaration
+can't be stubbed with `undefined` the way a function body can, every
+`Solution.hs` here starts as a completely empty module — you write the
+type and class declarations yourself, not just the function bodies. Each
+description names the exact constructor/field shape the tests rely on to
+construct values. Regular: 01–10. Challenges: 11–14 — integrative
+(`11-library-catalog`, `12-bank-transactions`) define a type and combine it
+with aggregation/folding into one multi-step result; edge-case
+(`13-direction-turn`, `14-money-equality`) hit the two classic surprises of
+deriving — `succ` crashing at the last `Enum` value, and `deriving (Eq)`
+giving you structural equality when you actually want value equality.
