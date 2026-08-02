@@ -1,4 +1,15 @@
-module Solution where
+module Solution (Shape (..), area, isCircle) where
+
+data Shape = Circle Float Float Float | Rectangle Float Float Float Float deriving (Show, Eq)
+
+area :: Shape -> Float
+area (Circle _ _ r) = pi * r ^ 2
+area (Rectangle x1 y1 x2 y2) = (abs $ x2 - x1) * (abs $ y2 - y1)
+
+isCircle :: Shape -> Bool
+isCircle (Circle _ _ _) = True
+isCircle shape = False
+
 
 -- New: data declarations and value constructors.
 --
