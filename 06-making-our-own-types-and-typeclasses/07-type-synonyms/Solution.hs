@@ -5,3 +5,13 @@ module Solution where
 --
 -- Define Name, PhoneNumber, and PhoneBook as described in description.md,
 -- then implement inPhoneBook and numbersFor.
+
+type Name = String
+type PhoneNumber = String
+type PhoneBook = [(Name, PhoneNumber)]
+
+inPhoneBook :: Name -> PhoneNumber -> PhoneBook -> Bool
+inPhoneBook name number phoneBook = (name, number) `elem` phoneBook
+
+numbersFor :: Name -> PhoneBook -> [PhoneNumber]
+numbersFor name = map (\x -> snd x) . filter (\x -> fst x == name)
