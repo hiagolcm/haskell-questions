@@ -158,3 +158,28 @@ matching `Wrapper undefined` never crashes; `12-descending-tiebreak` chains
 three `Ordering`s with `<>` where one key must sort backwards, which `<>`
 alone can't express — you have to flip that one comparison's result before
 combining it).
+
+### 08 — a-fistful-of-monads
+Based on https://learnyouahaskell.github.io/a-fistful-of-monads.html
+— `>>=` (bind) for `Maybe`, chaining `Maybe`-returning steps that would
+otherwise need nested `case` expressions, `do` notation as sugar for a
+chain of `>>=`, the `Monad` class itself
+(`class Applicative m => Monad m where (>>=) :: m a -> (a -> m b) -> m b`)
+and writing your own instance for a `Maybe`-shaped type, and `return`
+(defaulting to `pure`) for injecting a plain value back into a monadic
+chain. This chapter is scoped tighter than the LYAH page: it only covers
+the themes shared with the accompanying course material, so the list
+monad, `IO`, `MonadFail`, `guard`/`MonadPlus`, the Knight's quest, and the
+formal monad laws are all left out. Like chapters 6 and 7, any exercise
+that requires declaring your own `data`/`instance` ships an empty
+template instead of `undefined` stubs.
+
+Regular: 01–09, 11–12. Challenges: 10, 13–14 — integrative
+(`10-chained-monad-capstone` designs a variable-aware expression type
+and evaluator from scratch, combining record/recursive-type design with
+chained `Maybe` lookups and division; `14-checks-as-gates` chains three
+independent validation gates over a record, capping off the chapter with
+a full `do`-notation pipeline); edge-case (`13-hand-written-bind` forces
+you to write your own `Monad` instance and use it *without* `do`
+notation, via explicit `>>=`, to make sure the sugar isn't hiding
+unfamiliar mechanics).
