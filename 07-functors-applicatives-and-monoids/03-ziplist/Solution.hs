@@ -11,10 +11,10 @@ import Control.Applicative (ZipList (..))
 -- See description.md for the spec of each function.
 
 zipSums :: [Int] -> [Int] -> [Int]
-zipSums xs ys = undefined
+zipSums xs ys = getZipList $ (+) <$> ZipList xs <*> ZipList ys
 
 zipMax :: [Int] -> [Int] -> [Int]
-zipMax xs ys = undefined
+zipMax xs ys = getZipList $ (max) <$> ZipList xs <*> ZipList ys
 
 zipTriple :: String -> String -> String -> [(Char, Char, Char)]
-zipTriple xs ys zs = undefined
+zipTriple xs ys zs = getZipList $ (\x y z -> (x, y, z)) <$> ZipList xs <*> ZipList ys <*> ZipList zs
