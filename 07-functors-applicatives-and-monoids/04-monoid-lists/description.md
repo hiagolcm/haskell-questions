@@ -1,4 +1,4 @@
-# 06 — Monoid Lists
+# 04 — Monoid Lists
 
 New idea: `Monoid`. A type is a monoid when it has an "empty" value
 (`mempty`) and a way to combine two values (`<>`) such that combining with

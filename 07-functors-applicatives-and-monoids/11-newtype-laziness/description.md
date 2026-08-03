@@ -1,4 +1,4 @@
-# 13 — Newtype Laziness (Edge-case Challenge)
+# 11 — Newtype Laziness (Edge-case Challenge)
 
 **Type:** Edge-case — chapter 4 taught you that pattern-matching a
 constructor like `Wrap x` "opens up" the value to get at `x`. For an

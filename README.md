@@ -132,30 +132,29 @@ giving you structural equality when you actually want value equality.
 ### 07 — functors-applicatives-and-monoids
 Based on https://learnyouahaskell.github.io/functors-applicative-functors-and-monoids.html
 — `Applicative` (`pure`/`<*>`) for `Maybe` and lists, `ZipList` (a second,
-zip-wise `Applicative` instance for the same list type), `Applicative` for
-functions (`` (->) r ``, combining several functions that share the same
-input), and `Monoid` (`mempty`/`<>`/`mconcat`) — on built-in lists (plus a
-dedicated check that the monoid laws actually hold), on your own `newtype`
-wrappers (custom `Sum`/`Product`, `Any`/`All`), and `Ordering` as a
-`Monoid` for chained comparisons. This chapter skips the page's opening
-"Functors redux" section (a `Functor` recap already covered in chapter 6)
-and, for now, `liftA2`/`sequenceA` and the introductory `newtype` exercises
-(newtype still shows up where it's genuinely needed — the custom `Monoid`
-wrappers, and the laziness edge-case). Like chapter 6, the
-`newtype`/`Monoid`/`Functor`-instance exercises ship empty templates since
-the declarations can't be stubbed with `undefined`.
+zip-wise `Applicative` instance for the same list type), and `Monoid`
+(`mempty`/`<>`/`mconcat`) — on built-in lists (plus a dedicated check that
+the monoid laws actually hold), on your own `newtype` wrappers (custom
+`Sum`/`Product`, `Any`/`All`), and `Ordering` as a `Monoid` for chained
+comparisons. This chapter skips the page's opening "Functors redux"
+section (a `Functor` recap already covered in chapter 6) and, for now,
+`liftA2`/`sequenceA`, the function `Applicative`, and the introductory
+`newtype` exercises (`newtype` still shows up where it's genuinely
+needed — the custom `Monoid` wrappers, and the laziness edge-case). Like
+chapter 6, the `newtype`/`Monoid`/`Functor`-instance exercises ship empty
+templates since the declarations can't be stubbed with `undefined`.
 
 `03-ziplist` is the project's first exercise that needs an `import`
 (`Control.Applicative`, for `ZipList`) — earlier chapters avoided imports
 entirely, but from this chapter on they're fair game when a concept
 genuinely needs a non-Prelude type.
 
-Regular: 01–10. Challenges: 11–14 — integrative (`11-sum-present-scores`
+Regular: 01–08. Challenges: 09–12 — integrative (`09-sum-present-scores`
 combines `Maybe`-aware summing with counting into one report;
-`12-affordable-combos` combines the list `Applicative`'s "every
-combination" with filtering); edge-case (`13-newtype-laziness` shows that
+`10-affordable-combos` combines the list `Applicative`'s "every
+combination" with filtering); edge-case (`11-newtype-laziness` shows that
 matching a `newtype` constructor forces nothing, unlike `data` — pattern
-matching `Wrapper undefined` never crashes; `14-descending-tiebreak` chains
+matching `Wrapper undefined` never crashes; `12-descending-tiebreak` chains
 three `Ordering`s with `<>` where one key must sort backwards, which `<>`
 alone can't express — you have to flip that one comparison's result before
 combining it).

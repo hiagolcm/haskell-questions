@@ -1,8 +1,8 @@
-# 09 — Custom Monoid: Any and All
+# 07 — Custom Monoid: Any and All
 
 More custom `Monoid` instances, this time over `Bool`: one where combining
 means "or" (true if at least one side is), and one where it means "and"
-(true only if both sides are). Same idea as exercise 08 — two different
+(true only if both sides are). Same idea as exercise 06 — two different
 `newtype` wrappers over the same underlying type, each with its own notion
 of "combine."
 

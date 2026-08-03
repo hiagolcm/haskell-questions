@@ -1,4 +1,4 @@
-# 08 — Custom Monoid: Sum and Product
+# 06 — Custom Monoid: Sum and Product
 
 New idea: writing your **own** `Monoid` instance, for a `newtype` wrapper
 around numbers, in two different flavors — one where combining means

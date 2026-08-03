@@ -1,4 +1,4 @@
-# 12 — Affordable Combos (Integrative Challenge)
+# 10 — Affordable Combos (Integrative Challenge)
 
 **Type:** Integrative — combine the list `Applicative` (every combination,
 from this chapter) with `filter` (chapter 5) into a single multi-step

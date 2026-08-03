@@ -1,4 +1,4 @@
-# 11 — Sum Present Scores (Integrative Challenge)
+# 09 — Sum Present Scores (Integrative Challenge)
 
 **Type:** Integrative — combine `Maybe`-aware summing (this chapter) with
 counting (chapter 1) into a single report, rather than calling one

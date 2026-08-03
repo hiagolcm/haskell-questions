@@ -1,4 +1,4 @@
-# 10 — Ordering Monoid Capstone
+# 08 — Ordering Monoid Capstone
 
 New idea: `Ordering` (`LT`/`EQ`/`GT`, from chapter 2) is itself a `Monoid`.
 Combining two `Ordering`s with `<>` keeps the **first** one unless it's

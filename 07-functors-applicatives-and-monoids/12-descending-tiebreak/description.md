@@ -1,6 +1,6 @@
-# 14 — Descending Tiebreak (Edge-case Challenge)
+# 12 — Descending Tiebreak (Edge-case Challenge)
 
-**Type:** Edge-case — exercise 10 chained `Ordering`s with `<>` where every
+**Type:** Edge-case — exercise 08 chained `Ordering`s with `<>` where every
 key sorted the "natural" way (ascending). The twist here: chaining works
 just as well when one of the keys needs to sort **backwards**, but `<>`
 gives you no way to say that directly — `compare` alone always produces
